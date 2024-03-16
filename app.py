@@ -3,6 +3,8 @@ import csv
 
 
 FILE_PATH: str = 'ExampleLog.csv'
+SERVED_CASES_FILE_PATH: str = 'out/served.csv'
+NOT_SERVED_CASES_FILE_PATH: str = 'out/not_served.csv'
 
 
 header: list[str] = get_header(FILE_PATH)
@@ -13,7 +15,7 @@ cases: list[Case] = get_cases(logs)
 
 
 # Save served cases in a file
-with open('out/served.csv', 'w', newline='') as file:
+with open(SERVED_CASES_FILE_PATH, 'w', newline='') as file:
 	csv_writer = csv.writer(file)
 	csv_writer.writerow(header)
 
@@ -37,7 +39,7 @@ with open('out/served.csv', 'w', newline='') as file:
 
 
 # Save not served cases in a file
-with open('out/not_served.csv', 'w', newline='') as file:
+with open(NOT_SERVED_CASES_FILE_PATH, 'w', newline='') as file:
 	csv_writer = csv.writer(file)
 	csv_writer.writerow(header)
 
